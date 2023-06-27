@@ -22,23 +22,13 @@ const addresses = [
     console.log("The root is :");
     console.log(buf2hex(tree.getRoot())) ;
 
-// bu adresleri iki dosyada da tutma birinden otomatik çektir veya web kısmında hallet
 
-const leaf = keccak256(addresses[1]) ; // buradaki adresses[0] kısmına mintlemek isteyen kimse onun aresi gelecek
+const leaf = keccak256(addresses[1]) ; 
 const proof = tree.getProof(leaf).map(x => buf2hex(x.data)) ;
-//Gelen proof bir bytes arrayi
+
 
 console.log("The proof is:");
 console.log(proof);
 
-//proofu yazarken ' ' olanları "" arasına çevirmek gerekiyor
- 
-//contractla etkileşime girmek için
-/*
-
-contract.wlMint(addresses[0] , proof) ;
-gibi
-
-*/
 
 
